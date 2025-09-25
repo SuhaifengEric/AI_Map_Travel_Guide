@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合肥-威海自驾游攻略中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .dashboard-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+        }
+        
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2em;
+            color: white;
+        }
+        
+        .dashboard-card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .dashboard-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .card-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        .card-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .quick-stats {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚗 合肥-威海国庆自驾游攻略中心</h1>
+            <p>国庆五日深度游 | 避开拥堵路线 | 威海三日精华游玩 | 实时路况指导</p>
+        </div>
+
+        <div class="quick-stats">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">📊 行程概览</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">936km</div>
+                    <div class="stat-label">单程距离</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12-16h</div>
+                    <div class="stat-label">国庆驾驶时间</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5天</div>
+                    <div class="stat-label">行程天数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">主要景点</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="dashboard-card" onclick="window.open('coastal_detailed_travel_guide.html', '_blank')">
+                <div class="card-icon">🌊</div>
+                <h2>沿海国道详细旅游攻略</h2>
+                <p>错峰沿海路线 + 威海三日深度游完整攻略，包含详细行程、景点推荐和实用信息</p>
+                <button class="card-button">查看攻略</button>
+            </div>
+
+            <div class="dashboard-card" onclick="window.open('weihai_travel_guide.html', '_blank')">
+                <div class="card-icon">📋</div>
+                <h2>高速详细旅行攻略</h2>
+                <p>包含完整的国庆行程安排（10.1-10.5）、天气信息、住宿推荐、美食指南和实用贴士</p>
+                <button class="card-button">查看攻略</button>
+            </div>
+
+            <div class="dashboard-card" onclick="alert('高德地图APP已集成路线信息，请打开高德地图查看')">
+                <div class="card-icon">📱</div>
+                <h2>高德地图集成</h2>
+                <p>路线信息已同步至高德地图APP，支持实时导航和路况查询</p>
+                <button class="card-button">打开高德地图</button>
+            </div>
+
+            <div class="dashboard-card" onclick="showChecklist()">
+                <div class="card-icon">✅</div>
+                <h2>出行准备清单</h2>
+                <p>车辆检查、行李准备、证件整理、应急物品等完整清单</p>
+                <button class="card-button">查看清单</button>
+            </div>
+        </div>
+
+        <div class="quick-stats">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #333;">🌤️ 实时天气信息</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">合肥</div>
+                    <div class="stat-label">9月30日：🌧️ 18-22°C</div>
+                    <div class="stat-label">东北风 1-3级</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">威海</div>
+                    <div class="stat-label">10月1日：☀️ 19-26°C</div>
+                    <div class="stat-label">北风 1-3级</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">💰 预算</div>
+                    <div class="stat-label">油费：约1120元</div>
+                    <div class="stat-label">过路费：约700元</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">⛽ 加油</div>
+                    <div class="stat-label">建议：合肥加满</div>
+                    <div class="stat-label">途中：淮安、日照</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>✨ 祝您旅途愉快！如有任何问题，请随时联系我们</p>
+            <p>📞 紧急联系：122（事故）| 120（医疗）| 12328（救援）</p>
+        </div>
+    </div>
+
+    <script>
+        function showChecklist() {
+            window.open('checklist.html', '_blank');
+        }
+    </script>
+</body>
+</html>

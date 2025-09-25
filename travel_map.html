@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合肥-威海自驾路线地图</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 20px;
+            height: 80vh;
+        }
+        
+        #map {
+            height: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        
+        .route-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .attraction-list {
+            margin-top: 20px;
+        }
+        
+        .attraction-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .attraction-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+        
+        .attraction-item h4 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .attraction-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .control-panel {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .control-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .control-button:hover {
+            background: #5a67d8;
+        }
+        
+        .legend {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .route-marker {
+            background: #ff6b6b;
+        }
+        
+        .attraction-marker {
+            background: #4ecdc4;
+        }
+        
+        .service-marker {
+            background: #f9ca24;
+        }
+        
+        @media (max-width: 1024px) {
+            .map-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60vh 1fr;
+            }
+            
+            .sidebar {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗺️ 合肥-威海自驾路线地图</h1>
+            <p>实时展示自驾路线、景点位置和沿途服务设施</p>
+            <a href="index.html" class="back-button" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 25px; border: 2px solid white; transition: all 0.3s ease;">← 返回首页</a>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+            
+            <div class="sidebar">
+                <div class="route-info">
+                    <h3>路线信息</h3>
+                    <p><strong>起点：</strong>合肥市</p>
+                    <p><strong>终点：</strong>威海市</p>
+                    <p><strong>总距离：</strong>936公里</p>
+                    <p><strong>预计用时：</strong>10小时20分钟</p>
+                    <p><strong>主要高速：</strong>G40沪陕高速、G25长深高速、G15沈海高速</p>
+                </div>
+
+                <div class="control-panel">
+                    <h3>地图控制</h3>
+                    <button class="control-button" onclick="showRoute()">显示路线</button>
+                    <button class="control-button" onclick="showAttractions()">显示景点</button>
+                    <button class="control-button" onclick="showServices()">显示服务区</button>
+                    <button class="control-button" onclick="resetMap()">重置地图</button>
+                </div>
+
+                <div class="attraction-list">
+                    <h3>主要景点</h3>
+                    <div class="attraction-item" onclick="focusOnAttraction('liugongdao')">
+                        <h4>刘公岛风景区</h4>
+                        <p>📍 环翠区海滨北路</p>
+                        <p>🌟 甲午战争纪念地</p>
+                    </div>
+                    <div class="attraction-item" onclick="focusOnAttraction('beach')">
+                        <h4>国际海水浴场</h4>
+                        <p>📍 北环海路163-1号</p>
+                        <p>🌟 金色沙滩、日落美景</p>
+                    </div>
+                    <div class="attraction-item" onclick="focusOnAttraction('huanhai')">
+                        <h4>环海路</h4>
+                        <p>📍 威海市环翠区</p>
+                        <p>🌟 海岸公路风光</p>
+                    </div>
+                    <div class="attraction-item" onclick="focusOnAttraction('park')">
+                        <h4>威海公园</h4>
+                        <p>📍 环翠区海滨中路</p>
+                        <p>🌟 海滨长廊休闲</p>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <h4>图例说明</h4>
+                    <div class="legend-item">
+                        <div class="legend-color route-marker"></div>
+                        <span>自驾路线</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color attraction-marker"></div>
+                        <span>旅游景点</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color service-marker"></div>
+                        <span>服务区</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // 初始化地图
+        const map = L.map('map').setView([34.5, 118.5], 6);
+        
+        // 添加地图图层
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 定义坐标点
+        const locations = {
+            hefei: [31.820567, 117.227267],
+            weihai: [37.513315, 122.120519],
+            liugongdao: [37.506, 122.184],
+            beach: [37.535, 122.057],
+            huanhai: [37.525, 122.120],
+            park: [37.485, 122.145],
+            service1: [32.652, 117.071],  // 全椒服务区
+            service2: [33.551, 119.035],  // 淮安服务区
+            service3: [35.423, 119.527]   // 日照服务区
+        };
+
+        // 路线坐标点（简化版）
+        const routeCoordinates = [
+            [31.820567, 117.227267],  // 合肥
+            [32.652, 117.071],        // 全椒
+            [33.551, 119.035],        // 淮安
+            [34.600, 119.200],        // 连云港
+            [35.423, 119.527],        // 日照
+            [36.067, 120.333],        // 青岛
+            [37.513315, 122.120519]   // 威海
+        ];
+
+        // 创建路线
+        const routePolyline = L.polyline(routeCoordinates, {
+            color: '#ff6b6b',
+            weight: 5,
+            opacity: 0.7,
+            smoothFactor: 1
+        });
+
+        // 创建标记点
+        const markers = {
+            hefei: L.marker(locations.hefei).bindPopup('<b>合肥市</b><br>行程起点'),
+            weihai: L.marker(locations.weihai).bindPopup('<b>威海市</b><br>行程终点'),
+            liugongdao: L.marker(locations.liugongdao).bindPopup(
+                '<b>刘公岛风景区</b><br>' +
+                '📍 环翠区海滨北路<br>' +
+                '🎫 门票：122元<br>' +
+                '🌟 甲午战争纪念地'
+            ),
+            beach: L.marker(locations.beach).bindPopup(
+                '<b>国际海水浴场</b><br>' +
+                '📍 北环海路163-1号<br>' +
+                '🎫 免费<br>' +
+                '🌟 金色沙滩、日落美景'
+            ),
+            service1: L.marker(locations.service1).bindPopup('<b>全椒服务区</b><br>建议休息点'),
+            service2: L.marker(locations.service2).bindPopup('<b>淮安服务区</b><br>建议午餐点'),
+            service3: L.marker(locations.service3).bindPopup('<b>日照服务区</b><br>建议休息点')
+        };
+
+        // 添加所有标记到地图
+        Object.values(markers).forEach(marker => marker.addTo(map));
+
+        // 显示路线
+        function showRoute() {
+            routePolyline.addTo(map);
+            map.fitBounds(routePolyline.getBounds());
+        }
+
+        // 显示景点
+        function showAttractions() {
+            markers.liugongdao.addTo(map);
+            markers.beach.addTo(map);
+            map.fitBounds([
+                locations.liugongdao,
+                locations.beach
+            ]);
+        }
+
+        // 显示服务区
+        function showServices() {
+            markers.service1.addTo(map);
+            markers.service2.addTo(map);
+            markers.service3.addTo(map);
+            map.fitBounds([
+                locations.service1,
+                locations.service2,
+                locations.service3
+            ]);
+        }
+
+        // 聚焦到特定景点
+        function focusOnAttraction(attraction) {
+            switch(attraction) {
+                case 'liugongdao':
+                    map.setView(locations.liugongdao, 13);
+                    markers.liugongdao.openPopup();
+                    break;
+                case 'beach':
+                    map.setView(locations.beach, 13);
+                    markers.beach.openPopup();
+                    break;
+                case 'huanhai':
+                    map.setView(locations.huanhai, 12);
+                    break;
+                case 'park':
+                    map.setView(locations.park, 13);
+                    break;
+            }
+        }
+
+        // 重置地图
+        function resetMap() {
+            map.setView([34.5, 118.5], 6);
+            routePolyline.remove();
+        }
+
+        // 初始显示路线
+        showRoute();
+
+        // 添加比例尺
+        L.control.scale({metric: true, imperial: false}).addTo(map);
+
+        // 添加缩放控件
+        L.control.zoom({
+            position: 'bottomright'
+        }).addTo(map);
+    </script>
+</body>
+</html>
