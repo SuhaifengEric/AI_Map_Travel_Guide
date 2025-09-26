@@ -63,7 +63,8 @@
 ## 第五步：访问您的网站
 
 - **您的网站地址**：`https://SuhaifengEric.github.io/AI_Map_Travel_Guide/`
-- **示例**：如果用户名为GitHuSuhaifengEric，地址为：`https://GitHuSuhaifengEric.github.io/AI_Map_Travel_Guide/`
+- **示例**：如果用户名为SuhaifengEric，地址为：`https://SuhaifengEric.github.io/AI_Map_Travel_Guide/`
+
 
 ## 📋 部署检查清单
 
