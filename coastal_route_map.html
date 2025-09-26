@@ -135,13 +135,194 @@
         
 
         
-        @media (max-width: 968px) {
+        /* 响应式设计 - 平板设备 */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+            
             .map-container {
                 flex-direction: column;
+                gap: 15px;
             }
             
             #map {
-                height: 400px;
+                height: 450px;
+            }
+            
+            .info-panel {
+                max-height: 400px;
+                padding: 20px;
+            }
+            
+            .control-panel {
+                padding: 15px;
+            }
+            
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+            
+            .scenic-spot {
+                padding: 12px;
+                margin: 10px 0;
+            }
+        }
+        
+        /* 响应式设计 - 手机设备 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px 0;
+            }
+            
+            .header h1 {
+                font-size: 1.6em;
+                margin-bottom: 8px;
+            }
+            
+            .header p {
+                font-size: 1em;
+                white-space: normal;
+                overflow: visible;
+                text-overflow: clip;
+            }
+            
+            #map {
+                height: 350px;
+                border-radius: 10px;
+            }
+            
+            .info-panel {
+                padding: 15px;
+                border-radius: 10px;
+                max-height: 350px;
+            }
+            
+            .control-panel {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .btn-group {
+                gap: 8px;
+            }
+            
+            .btn {
+                padding: 8px 14px;
+                font-size: 0.85em;
+                border-radius: 20px;
+            }
+            
+            .route-info {
+                margin-bottom: 20px;
+            }
+            
+            .route-info h3 {
+                font-size: 1.1em;
+                margin-bottom: 12px;
+            }
+            
+            .scenic-spot {
+                padding: 10px;
+                margin: 8px 0;
+            }
+            
+            .scenic-spot h4 {
+                font-size: 1em;
+                margin-bottom: 6px;
+            }
+            
+            .scenic-spot p {
+                font-size: 0.85em;
+                margin: 2px 0;
+            }
+            
+            .back-button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+        
+        /* 响应式设计 - 小屏手机 */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.4em;
+            }
+            
+            #map {
+                height: 300px;
+            }
+            
+            .info-panel {
+                padding: 12px;
+                max-height: 300px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .btn {
+                width: 100%;
+                margin: 2px 0;
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .scenic-spot {
+                padding: 8px;
+            }
+        }
+        
+        /* 触摸设备优化 */
+        @media (hover: none) and (pointer: coarse) {
+            .scenic-spot:hover {
+                transform: none;
+            }
+            
+            .btn:hover {
+                transform: none;
+            }
+            
+            .scenic-spot:active {
+                background: #e3f2fd;
+                transform: scale(0.98);
+            }
+            
+            .btn:active {
+                transform: scale(0.95);
+            }
+        }
+        
+        /* 横屏模式优化 */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .map-container {
+                flex-direction: row;
+            }
+            
+            #map {
+                height: 300px;
+            }
+            
+            .info-panel {
+                max-height: 300px;
             }
         }
     </style>

@@ -41,8 +41,8 @@
         .header p {
             font-size: 1.3em;
             opacity: 0.9;
-            max-width: 600px;
             margin: 0 auto;
+            white-space: nowrap;  /* 强制不换行，充分利用桌面空间 */
         }
         
         .dashboard {
@@ -151,17 +151,133 @@
             opacity: 0.8;
         }
         
-        @media (max-width: 768px) {
+        /* 响应式设计 - 平板设备 */
+        @media (max-width: 1024px) {
             .header h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
             
             .dashboard {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
             }
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* 响应式设计 - 手机设备 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 40px 0;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+            
+            .header p {
+                font-size: 1.1em;
+                line-height: 1.4;
+                white-space: normal;     /* 手机设备允许换行 */
+                overflow: visible;      /* 显示全部内容 */
+                text-overflow: clip;    /* 不显示省略号 */
+            }
+            
+            .dashboard {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .dashboard-card {
+                padding: 25px;
+                margin-bottom: 15px;
+            }
+            
+            .card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+            
+            .dashboard-card h2 {
+                font-size: 1.3em;
+                margin-bottom: 10px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .stat-item {
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 2em;
+            }
+            
+            .quick-stats {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .card-button {
+                padding: 10px 25px;
+                font-size: 0.95em;
+            }
+        }
+        
+        /* 响应式设计 - 小屏手机 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.6em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .dashboard-card {
+                padding: 20px;
+            }
+            
+            .card-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3em;
+            }
+        }
+        
+        /* 触摸设备优化 */
+        @media (hover: none) and (pointer: coarse) {
+            .dashboard-card:hover {
+                transform: none;
+            }
+            
+            .card-button:hover {
+                transform: none;
+            }
+            
+            .dashboard-card:active {
+                transform: scale(0.98);
+            }
+            
+            .card-button:active {
+                transform: scale(0.95);
             }
         }
     </style>
@@ -169,7 +285,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚗 合肥-威海国庆自驾游攻略中心</h1>
+            <h1>🚗 合肥-威海国庆自驾游攻略</h1>
             <p>国庆五日深度游 | 避开拥堵路线 | 威海三日精华游玩 | 实时路况指导</p>
         </div>
 

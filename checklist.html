@@ -97,15 +97,211 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
         
-        @media (max-width: 768px) {
+        /* 响应式设计 - 平板设备 */
+        @media (max-width: 1024px) {
             .container {
-                padding: 20px;
+                padding: 15px;
             }
             
             .header h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
             
+            .card {
+                padding: 25px;
+            }
+            
+            .checklist-item {
+                padding: 18px;
+            }
+            
+            .category {
+                padding: 18px;
+            }
+        }
+        
+        /* 响应式设计 - 手机设备 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 30px 0;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+                margin-bottom: 8px;
+            }
+            
+            .header p {
+                font-size: 1.1em;
+                line-height: 1.4;
+                white-space: normal;
+                overflow: visible;
+                text-overflow: clip;
+            }
+            
+            .card {
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 12px;
+            }
+            
+            .card h2 {
+                font-size: 1.4em;
+                margin-bottom: 15px;
+            }
+            
+            .checklist-item {
+                padding: 15px;
+                margin: 12px 0;
+            }
+            
+            .category {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .category h3 {
+                font-size: 1.2em;
+                margin-bottom: 8px;
+            }
+            
+            .checkbox {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            
+            .item-text {
+                font-size: 0.95em;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .btn {
+                width: 100%;
+                margin: 2px 0;
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+        
+        /* 响应式设计 - 小屏手机 */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .checklist-item {
+                padding: 12px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .checkbox {
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+            
+            .item-text {
+                font-size: 0.9em;
+            }
+            
+            .btn {
+                padding: 8px 12px;
+                font-size: 0.85em;
+            }
+            
+            .category {
+                padding: 12px;
+            }
+        }
+        
+        /* 触摸设备优化 */
+        @media (hover: none) and (pointer: coarse) {
+            .card:hover {
+                transform: none;
+            }
+            
+            .checklist-item:hover {
+                transform: none;
+            }
+            
+            .btn:hover {
+                transform: none;
+            }
+            
+            .card:active {
+                transform: scale(0.98);
+            }
+            
+            .checklist-item:active {
+                background-color: #f0f8ff;
+            }
+            
+            .btn:active {
+                transform: scale(0.95);
+            }
+            
+            .checkbox:active {
+                transform: scale(0.9);
+            }
+        }
+        
+        /* 横屏模式优化 */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 20px 0;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            
+            .checklist-item {
+                padding: 10px;
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .checkbox {
+                margin-right: 10px;
+                margin-bottom: 0;
+            }
             .checklist-items {
                 grid-template-columns: 1fr;
             }

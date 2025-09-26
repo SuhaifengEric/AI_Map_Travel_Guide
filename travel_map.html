@@ -149,14 +149,175 @@
             background: #f9ca24;
         }
         
+        /* 响应式设计 - 平板设备 */
         @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+            
             .map-container {
                 grid-template-columns: 1fr;
-                grid-template-rows: 60vh 1fr;
+                grid-template-rows: 50vh 1fr;
+                gap: 15px;
             }
             
             .sidebar {
-                height: 300px;
+                height: auto;
+                max-height: 400px;
+            }
+            
+            .route-info, .control-panel {
+                padding: 15px;
+            }
+            
+            .attraction-item {
+                padding: 12px;
+            }
+        }
+        
+        /* 响应式设计 - 手机设备 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px 0;
+            }
+            
+            .header h1 {
+                font-size: 1.6em;
+                margin-bottom: 8px;
+            }
+            
+            .header p {
+                font-size: 1em;
+                white-space: normal;     /* 手机设备允许换行 */
+                overflow: visible;      /* 显示全部内容 */
+                text-overflow: clip;    /* 不显示省略号 */
+            }
+            
+            .map-container {
+                grid-template-rows: 40vh 1fr;
+                gap: 10px;
+            }
+            
+            #map {
+                border-radius: 10px;
+            }
+            
+            .sidebar {
+                padding: 15px;
+                border-radius: 10px;
+                max-height: 350px;
+            }
+            
+            .route-info, .control-panel {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .control-button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+                margin: 3px;
+            }
+            
+            .attraction-item {
+                padding: 10px;
+                margin: 8px 0;
+            }
+            
+            .attraction-item h4 {
+                font-size: 1em;
+            }
+            
+            .attraction-item p {
+                font-size: 0.85em;
+            }
+            
+            .legend {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .back-button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+        
+        /* 响应式设计 - 小屏手机 */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.4em;
+            }
+            
+            .map-container {
+                grid-template-rows: 35vh 1fr;
+            }
+            
+            .sidebar {
+                padding: 12px;
+                max-height: 300px;
+            }
+            
+            .control-button {
+                padding: 6px 12px;
+                font-size: 0.85em;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .btn {
+                width: 100%;
+                margin: 2px 0;
+            }
+        }
+        
+        /* 触摸设备优化 */
+        @media (hover: none) and (pointer: coarse) {
+            .attraction-item:hover {
+                transform: none;
+            }
+            
+            .control-button:hover {
+                background: #667eea;
+            }
+            
+            .attraction-item:active {
+                background: #e3f2fd;
+                transform: scale(0.98);
+            }
+            
+            .control-button:active {
+                background: #5a67d8;
+                transform: scale(0.95);
+            }
+        }
+        
+        /* 横屏模式优化 */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .map-container {
+                grid-template-rows: 70vh 1fr;
+            }
+            
+            .sidebar {
+                max-height: 250px;
             }
         }
     </style>
