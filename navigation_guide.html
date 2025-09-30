@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合肥-威海荣成沿海路线详细导航说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+        
+        .navigation-step {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .navigation-step h3 {
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .navigation-step .step-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .route-detail {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .route-detail h4 {
+            color: #1976d2;
+            margin-bottom: 8px;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .map-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .map-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            margin-right: 10px;
+        }
+        
+        .nav-buttons {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .navigation-step {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚗 合肥-威海荣成沿海路线详细导航说明</h1>
+            <p>从合肥出发到沿海国道G228的完整导航指引</p>
+        </div>
+
+        <!-- 导航概览 -->
+        <div class="card">
+            <h2>🗺️ 导航路线概览</h2>
+            <div class="route-detail">
+                <h4>全程路线：合肥 → G40沪陕高速 → 沿海国道G228 → G15沈海高速 → 威海 → 荣成</h4>
+                <p><strong>总距离：</strong>约2200公里</p>
+                <p><strong>预计用时：</strong>去程14-16小时</p>
+                <p><strong>主要高速：</strong>G40沪陕高速、G15沈海高速</p>
+                <p><strong>沿海国道：</strong>G228国道（沿海景观公路）</p>
+            </div>
+        </div>
+
+        <!-- 详细导航步骤 -->
+        <div class="card">
+            <h2>🧭 详细导航步骤</h2>
+            
+            <!-- 第一步：合肥出发 -->
+            <div class="navigation-step">
+                <h3><span class="step-number">1</span>合肥市区出发</h3>
+                <p><strong>导航起点：</strong>合肥市区任意位置</p>
+                <p><strong>导航设置：</strong>高德地图搜索"G40沪陕高速入口"</p>
+                <p><strong>推荐路线：</strong>沿金寨路高架 → 合肥绕城高速 → G40沪陕高速入口</p>
+                <div class="important-note">
+                    <strong>💡 提示：</strong>建议早上5:00出发，避开早高峰，确保顺利上高速
+                </div>
+            </div>
+
+            <!-- 第二步：G40沪陕高速段 -->
+            <div class="navigation-step">
+                <h3><span class="step-number">2</span>G40沪陕高速段（合肥 → 沿海国道入口）</h3>
+                <p><strong>高速路段：</strong>G40沪陕高速，全程约400公里</p>
+                <p><strong>主要途经：</strong>合肥 → 巢湖 → 芜湖 → 马鞍山 → 南京 → 镇江 → 常州 → 无锡 → 苏州</p>
+                <p><strong>关键节点：</strong></p>
+                <ul>
+                    <li><strong>合肥绕城高速：</strong>注意G40沪陕高速指示牌</li>
+                    <li><strong>南京绕城高速：</strong>继续沿G40向东行驶</li>
+                    <li><strong>苏州绕城高速：</strong>准备转入沿海国道</li>
+                </ul>
+                <div class="important-note">
+                    <strong>⚠️ 注意：</strong>G40沪陕高速路况良好，但国庆期间车流量较大，注意保持安全车距
+                </div>
+            </div>
+
+            <!-- 第三步：转入沿海国道G228 -->
+            <div class="navigation-step">
+                <h3><span class="step-number">3</span>转入沿海国道G228（关键导航点）</h3>
+                <p><strong>下高速位置：</strong>G40沪陕高速与G15沈海高速交汇处附近</p>
+                <p><strong>具体导航指引：</strong></p>
+                <ol>
+                    <li><strong>在G40沪陕高速上行驶至苏州绕城高速段</strong></li>
+                    <li><strong>注意观察"G15沈海高速/上海方向"指示牌</strong></li>
+                    <li><strong>转入G15沈海高速后，行驶约50公里</strong></li>
+                    <li><strong>在"常熟/张家港"出口下高速</strong></li>
+                    <li><strong>下高速后，导航设置"沿海国道G228"</strong></li>
+                </ol>
+                <p><strong>高德地图搜索关键词：</strong>"沿海国道G228入口" 或 "G228国道常熟段"</p>
+                <div class="important-note">
+                    <strong>📍 重要：</strong>这是进入沿海景观公路的关键节点，务必提前设置好导航
+                </div>
+            </div>
+
+            <!-- 第四步：沿海国道G228段 -->
+            <div class="navigation-step">
+                <h3><span class="step-number">4</span>沿海国道G228段（精华景观路段）</h3>
+                <p><strong>国道路段：</strong>G228国道，全程约800公里沿海景观公路</p>
+                <p><strong>主要途经城市：</strong>常熟 → 太仓 → 上海金山 → 浙江平湖 → 海盐 → 慈溪 → 宁波 → 台州 → 温州 → 福建宁德 → 福州 → 莆田 → 泉州 → 厦门 → 漳州 → 广东潮州 → 汕头 → 汕尾 → 惠州 → 深圳 → 东莞 → 广州 → 中山 → 珠海 → 阳江 → 茂名 → 湛江</p>
+                <p><strong>导航设置：</strong></p>
+                <ul>
+                    <li><strong>分段导航：</strong>建议分段设置目的地</li>
+                    <li><strong>第一段：</strong>导航至"连云港"（约600公里）</li>
+                    <li><strong>第二段：</strong>连云港导航至"威海"（约200公里）</li>
+                </ul>
+                <div class="important-note">
+                    <strong>🌊 特色：</strong>G228国道紧贴海岸线，沿途可欣赏黄海、东海、南海美景，灵活停靠观景台
+                </div>
+            </div>
+
+            <!-- 第五步：转入G15沈海高速 -->
+            <div class="navigation-step">
+                <h3><span class="step-number">5</span>转入G15沈海高速（前往威海）</h3>
+                <p><strong>转入位置：</strong>在G228国道行驶至烟台附近时</p>
+                <p><strong>具体指引：</strong></p>
+                <ol>
+                    <li><strong>在G228国道上继续向北行驶</strong></li>
+                    <li><strong>经过烟台市区后，注意"G15沈海高速/威海方向"指示牌</strong></li>
+                    <li><strong>在合适的入口转入G15沈海高速</strong></li>
+                    <li><strong>沿G15沈海高速向北行驶约80公里</strong></li>
+                    <li><strong>在"威海"出口下高速</strong></li>
+                </ol>
+                <p><strong>高德地图搜索：</strong>"G15沈海高速威海出口"</p>
+                <div class="important-note">
+                    <strong>⏱️ 时间安排：</strong>建议在下午17:00前抵达威海，以便欣赏国际海水浴场日落
+                </div>
+            </div>
+
+            <!-- 第六步：威海市区导航 -->
+            <div class="navigation-step">
+                <h3><span class="step-number">6</span>威海市区及荣成导航</h3>
+                <p><strong>威海市区导航：</strong></p>
+                <ul>
+                    <li><strong>酒店导航：</strong>搜索预订的酒店名称</li>
+                    <li><strong>景点导航：</strong>刘公岛码头、国际海水浴场、环海路</li>
+                </ul>
+                
+                <p><strong>威海 → 荣成导航：</strong></p>
+                <ol>
+                    <li><strong>从威海市区出发，导航设置"荣成市"</strong></li>
+                    <li><strong>沿G18荣乌高速向东行驶约60公里</strong></li>
+                    <li><strong>在"荣成"出口下高速</strong></li>
+                    <li><strong>继续导航至具体景点：那香海、成山头、西霞口等</strong></li>
+                </ol>
+                <div class="important-note">
+                    <strong>🏖️ 提示：</strong>荣成景点分散，建议使用高德地图的"添加途经点"功能，规划最优游览路线
+                </div>
+            </div>
+        </div>
+
+        <!-- 高德地图使用技巧 -->
+        <div class="card">
+            <h2>📱 高德地图使用技巧</h2>
+            <div class="route-detail">
+                <h4>1. 多目的地路线规划</h4>
+                <p><strong>操作步骤：</strong>主界面 → 路线 → 输入起点"合肥" → 点击"+"添加途经点 → 依次添加"连云港"、"威海"、"荣成"</p>
+                
+                <h4>2. 实时路况查看</h4>
+                <p><strong>功能：</strong>地图界面点击"路况"按钮，查看实时交通状况，避开拥堵路段</p>
+                
+                <h4>3. 服务区提醒设置</h4>
+                <p><strong>设置：</strong>导航设置中开启"服务区提醒"，提前规划休息点</p>
+                
+                <h4>4. 离线地图下载</h4>
+                <p><strong>建议：</strong>提前下载安徽、江苏、山东三省离线地图，避免信号不佳时无法导航</p>
+                
+                <h4>5. 语音导航设置</h4>
+                <p><strong>推荐：</strong>使用"详细播报"模式，及时了解路况和限速信息</p>
+            </div>
+        </div>
+
+        <!-- 重要提示 -->
+        <div class="card">
+            <h2>⚠️ 重要导航提示</h2>
+            <div class="important-note">
+                <h4>国庆期间特别注意事项</h4>
+                <ul>
+                    <li><strong>错峰出行：</strong>建议10月1日早上5:00前出发，避开出行高峰</li>
+                    <li><strong>路况关注：</strong>实时关注高德地图路况信息，及时调整路线</li>
+                    <li><strong>充电规划：</strong>如为电动车，提前规划充电站（G40、G15服务区均有充电桩）</li>
+                    <li><strong>天气预警：</strong>关注沿海地区天气预报，避开台风等恶劣天气</li>
+                    <li><strong>备用路线：</strong>准备1-2条备用路线，应对突发交通状况</li>
+                </ul>
+            </div>
+            
+            <div class="important-note">
+                <h4>安全驾驶提醒</h4>
+                <ul>
+                    <li><strong>疲劳驾驶：</strong>每2小时休息15分钟，确保驾驶安全</li>
+                    <li><strong>车速控制：</strong>G228国道部分路段限速80km/h，注意观察限速标志</li>
+                    <li><strong>沿海路段：</strong>注意横风影响，特别是桥梁和开阔路段</li>
+                    <li><strong>夜间驾驶：</strong>尽量避免夜间在国道上行驶</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 导航按钮 -->
+        <div class="nav-buttons">
+            <a href="index.html" class="map-btn back-btn">🏠 返回主页</a>
+            <a href="coastal_detailed_travel_guide.html" class="map-btn">📖 查看详细攻略</a>
+            <a href="coastal_route_map.html" class="map-btn">🗺️ 查看路线地图</a>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 添加滚动动画效果
+            const cards = document.querySelectorAll('.card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // 高德地图链接处理（示例）
+            const amapLinks = document.querySelectorAll('[data-amap-search]');
+            amapLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const searchTerm = this.getAttribute('data-amap-search');
+                    alert('在高德地图中搜索: ' + searchTerm);
+                    // 实际应用中可跳转到高德地图App
+                    // window.location.href = 'amapuri://search?query=' + encodeURIComponent(searchTerm);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

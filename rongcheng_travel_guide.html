@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荣成深度游攻略 - 小红书热门景点推荐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h2 {
+            color: #0984e3;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0984e3;
+            padding-bottom: 10px;
+        }
+        
+        .attraction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .attraction-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .attraction-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .attraction-content {
+            padding: 20px;
+        }
+        
+        .attraction-content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .xiaohongshu-tag {
+            background: #ff4757;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        
+        .schedule-day {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .time-slot {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 3px solid #4caf50;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background: #0984e3;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .tip {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 1.1em;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .attraction-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏖️ 荣成深度游攻略</h1>
+            <p>小红书热门景点推荐 | 2025年国庆特别版</p>
+            <a href="weihai_travel_guide.html" class="back-button">← 返回威海攻略</a>
+            <a href="index.html" class="back-button">← 返回首页</a>
+        </div>
+
+        <!-- 小红书热门景点 -->
+        <div class="card">
+            <h2>📸 小红书热门打卡地</h2>
+            <div class="attraction-grid">
+                <div class="attraction-card">
+                    <div class="attraction-image">西霞口动物园</div>
+                    <div class="attraction-content">
+                        <h3>西霞口神雕山野生动物园 <span class="xiaohongshu-tag">热门</span></h3>
+                        <p>📍 荣成市成山镇西霞口村</p>
+                        <p>⏰ 建议游览：4-5小时</p>
+                        <p>🎫 门票：160元</p>
+                        <p>🌟 特色：亚洲最大海岸动物园、海洋动物表演、海狮互动</p>
+                        <p>📸 拍照点：海洋馆玻璃隧道、海狮表演场</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-image">成山头</div>
+                    <div class="attraction-content">
+                        <h3>成山头风景区 <span class="xiaohongshu-tag">必去</span></h3>
+                        <p>📍 荣成市成山镇</p>
+                        <p>⏰ 建议游览：3-4小时</p>
+                        <p>🎫 门票：150元</p>
+                        <p>🌟 特色：中国海岸线最东端、"天尽头"景观、日出观赏</p>
+                        <p>📸 拍照点：天尽头石碑、观海平台、日出时刻</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-image">那香海</div>
+                    <div class="attraction-content">
+                        <h3>那香海钻石沙滩浴场 <span class="xiaohongshu-tag">网红</span></h3>
+                        <p>📍 荣成市港西镇那香海景区</p>
+                        <p>⏰ 全天开放</p>
+                        <p>🎫 免费</p>
+                        <p>🌟 特色：金色沙滩、清澈海水、度假氛围</p>
+                        <p>📸 拍照点：沙滩秋千、海边栈道、日落时分</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-image">鸡鸣岛</div>
+                    <div class="attraction-content">
+                        <h3>鸡鸣岛 <span class="xiaohongshu-tag">综艺同款</span></h3>
+                        <p>📍 荣成市港西镇鸡鸣岛</p>
+                        <p>⏰ 建议游览：3小时</p>
+                        <p>🎫 船票：80元（往返）</p>
+                        <p>🌟 特色：爸爸去哪儿拍摄地、海岛风光、渔村风情</p>
+                        <p>📸 拍照点：海岛码头、渔村小巷、海边礁石</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 一日游行程推荐 -->
+        <div class="card">
+            <h2>🗓️ 荣成一日游精华路线</h2>
+            
+            <div class="schedule-day">
+                <h3>🌅 上午行程：西霞口野生动物园</h3>
+                <div class="time-slot">
+                    <span class="icon">🕘</span><strong>09:00</strong> 抵达西霞口动物园
+                </div>
+                <div class="time-slot">
+                    <span class="icon">🕙</span><strong>10:30</strong> 观看海狮表演（不可错过）
+                </div>
+                <div class="time-slot">
+                    <span class="icon">🕛</span><strong>12:00</strong> 动物园内午餐
+                </div>
+                <div class="tip">
+                    <strong>💡 小红书攻略：</strong>提前查看表演时间，海狮表演场次有限
+                </div>
+            </div>
+
+            <div class="schedule-day">
+                <h3>🌊 下午行程：成山头 + 那香海</h3>
+                <div class="time-slot">
+                    <span class="icon">🕑</span><strong>14:00</strong> 前往成山头风景区
+                </div>
+                <div class="time-slot">
+                    <span class="icon">🕒</span><strong>15:30</strong> 游览成山头"天尽头"
+                </div>
+                <div class="time-slot">
+                    <span class="icon">🕔</span><strong>17:00</strong> 那香海沙滩休闲
+                </div>
+                <div class="time-slot">
+                    <span class="icon">🕖</span><strong>19:00</strong> 那香海晚餐
+                </div>
+                <div class="tip">
+                    <strong>💡 拍照技巧：</strong>成山头日落时分拍照效果最佳
+                </div>
+            </div>
+        </div>
+
+        <!-- 美食推荐 -->
+        <div class="card">
+            <h2>🍽️ 荣成美食地图</h2>
+            
+            <h3>🦞 海鲜必吃榜</h3>
+            <ul>
+                <li><strong>荣成海胆：</strong>新鲜海胆刺身，口感鲜美</li>
+                <li><strong>清蒸石斑鱼：</strong>当地特色，肉质鲜嫩</li>
+                <li><strong>烤海蛎子：</strong>海边烧烤必备</li>
+                <li><strong>海鲜疙瘩汤：</strong>暖心暖胃</li>
+            </ul>
+
+            <h3>🏪 餐厅推荐</h3>
+            <ul>
+                <li><strong>那香海海鲜餐厅：</strong>环境优美，海鲜新鲜</li>
+                <li><strong>成山头渔家乐：</strong>地道渔村风味</li>
+                <li><strong>荣成海鲜大排档：</strong>性价比高，种类丰富</li>
+            </ul>
+
+            <div class="tip">
+                <strong>💡 小红书美食家推荐：</strong>那香海的海鲜自助晚餐值得一试
+            </div>
+        </div>
+
+        <!-- 住宿推荐 -->
+        <div class="card">
+            <h2>🏨 荣成住宿指南</h2>
+            
+            <h3>⭐ 高端海景酒店</h3>
+            <ul>
+                <li><strong>那香海度假酒店：</strong>海景房，设施完善</li>
+                <li><strong>成山头海景酒店：</strong>观景位置佳</li>
+            </ul>
+
+            <h3>💫 特色民宿</h3>
+            <ul>
+                <li><strong>海边民宿：</strong>亲近大海，体验当地生活</li>
+                <li><strong>渔家乐：</strong>品尝地道渔家菜</li>
+            </ul>
+
+            <h3>💰 经济型选择</h3>
+            <ul>
+                <li><strong>汉庭酒店（荣成店）：</strong>连锁品牌，品质保证</li>
+                <li><strong>如家快捷：</strong>性价比高</li>
+            </ul>
+
+            <div class="tip">
+                <strong>💡 预订提示：</strong>国庆期间房源紧张，建议提前1个月预订
+            </div>
+        </div>
+
+        <!-- 交通指南 -->
+        <div class="card">
+            <h2>🚗 荣成交通指南</h2>
+            
+            <h3>📍 自驾路线</h3>
+            <ul>
+                <li><strong>威海 → 荣成：</strong>约1小时车程</li>
+                <li><strong>主要道路：</strong>G18荣乌高速、S302省道</li>
+            </ul>
+
+            <h3>🚌 公共交通</h3>
+            <ul>
+                <li><strong>威海汽车站 → 荣成：</strong>班车频繁，约1.5小时</li>
+                <li><strong>荣成市内交通：</strong>出租车、网约车方便</li>
+            </ul>
+
+            <div class="tip">
+                <strong>💡 自驾提示：</strong>荣成景点分布较散，建议自驾游览
+            </div>
+        </div>
+
+        <!-- 实用贴士 -->
+        <div class="card">
+            <h2>💡 荣成游玩贴士</h2>
+            
+            <h3>📅 最佳游览时间</h3>
+            <ul>
+                <li><strong>季节：</strong>5-10月为最佳旅游季节</li>
+                <li><strong>天气：</strong>夏季凉爽，适合避暑</li>
+                <li><strong>避开：</strong>7-8月旅游高峰期</li>
+            </ul>
+
+            <h3>🎒 必备物品</h3>
+            <ul>
+                <li><strong>防晒：</strong>防晒霜、遮阳帽、太阳镜</li>
+                <li><strong>衣物：</strong>轻薄外套（海边风大）</li>
+                <li><strong>摄影：</strong>相机、手机充电宝</li>
+            </ul>
+
+            <h3>⚠️ 注意事项</h3>
+            <ul>
+                <li>海边游玩注意安全，遵守警示标志</li>
+                <li>保护海洋环境，不乱扔垃圾</li>
+                <li>尊重当地风俗习惯</li>
+            </ul>
+
+            <div class="tip">
+                <strong>🌟 小红书达人建议：</strong>那香海的日落和成山头的日出都是不可错过的美景
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, #74b9ff, #0984e3); color: white;">
+            <h2>🎯 荣成旅行总结</h2>
+            <p>建议游玩时间：1-2天 | 主要景点：西霞口、成山头、那香海</p>
+            <p>预算参考：500-800元/人/天（含门票、餐饮、住宿）</p>
+            <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                <h3>📸 拍照打卡清单</h3>
+                <p>• 西霞口海狮表演 🦭 | • 成山头"天尽头" 🌅</p>
+                <p>• 那香海沙滩秋千 🏖️ | • 鸡鸣岛渔村风情 🏝️</p>
+            </div>
+            <p style="margin-top: 20px; font-size: 1.2em;">祝您在荣成的旅程充满美好回忆！🌊📸✨</p>
+        </div>
+    </div>
+</body>
+</html>
